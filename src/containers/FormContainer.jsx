@@ -11,22 +11,17 @@ const INITIAL_STATE = [
 ];
 
 class FormContainer extends Component {
-    constructor() {
-        super();
-        this.state = {
+    
+        
+        state = {
             newUser: {
                 name:'',
                 age:''
             },
-            usersSaved:INITIAL_STATE
-        }
-        this.handleName = this.handleName.bind(this);
-        this.handleAge = this.handleAge.bind(this);
-        this.handleFormSubmit = this.handleFormSubmit.bind(this);
-        this.handleClearForm = this.handleClearForm.bind(this);
+            usersSaved:INITIAL_STATE        
     }
 
-    handleName(e){
+    handleName = (e) => {
         let value = e.target.value;
 
         this.setState(
@@ -39,7 +34,7 @@ class FormContainer extends Component {
         );
     }
 
-    handleAge(e){
+    handleAge = (e) => {
         let value = e.target.value;
 
         this.setState(
@@ -52,7 +47,7 @@ class FormContainer extends Component {
         );
     }
 
-    handleFormSubmit(e) {
+    handleFormSubmit = (e) => {
         e.preventDefault();
         let userData = this.state.newUser;
         this.setState(prevState => (
@@ -69,7 +64,7 @@ class FormContainer extends Component {
         ));
     }
 
-    handleClearForm(e) {
+    handleClearForm = (e) => {
         e.preventDefault();
         this.setState(            
             {newUser: {
@@ -115,6 +110,6 @@ class FormContainer extends Component {
             </div>
         )
     }
-}
+};
 
 export default FormContainer;
